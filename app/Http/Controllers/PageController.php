@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Pages;
+use App\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class PageController extends Controller
 {
@@ -35,12 +36,13 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        $page  = new Pages();
-        $page->nombre = $request->input('nombre');
+        $page  = new Page();
+        $page->nombre_pagina = $request->input('nombre');
         $page->dimension = $request->input('dimension');
         $page->propiedad = $request->input('propiedad');
         $page->estado = $request->input('estado');
         $page->save();
+        return Redirect::route('ViewPage', ['id' => $page->id]);
     }
 
     /**
@@ -49,9 +51,11 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function view($id)
     {
-        //
+        $page = Page::find($id);
+        $data = ['title' => 'Pagina', 'page' => $page];
+        return \view('pages.view', $data);
     }
 
     /**

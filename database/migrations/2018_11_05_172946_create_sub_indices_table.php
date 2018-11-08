@@ -14,14 +14,13 @@ class CreateSubIndicesTable extends Migration
     public function up()
     {
         Schema::create('sub_indices', function (Blueprint $table) {
-            $table->increments('id_sub_indice');
+            $table->increments('id');
             $table->string('nombre_sub_indice');
             $table->string('descripcion');
             $table->integer('estado');
-            $table->unsignedInteger('id_indice');
+            $table->unsignedInteger('indice_id');
+            $table->foreign('indice_id')->references('id')->on('indices');
             $table->timestamps();
-            
-            $table->foreign('id_indice')->references('id_indice')->on('indices');
         });
     }
 

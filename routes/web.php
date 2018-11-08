@@ -20,4 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pages', 'PageController@index');
 Route::get('/pages/create', 'PageController@create');
-Route::post('/pages/store', 'PageController@store');
+Route::post('/pages/store', [
+    'as'   => 'createPage',
+    'uses' => 'PageController@store'
+]);
+Route::get('/pages/{id}/view', [
+    'as'   => 'ViewPage',
+    'uses' => 'PageController@view'
+]);

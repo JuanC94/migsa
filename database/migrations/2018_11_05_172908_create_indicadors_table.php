@@ -13,14 +13,13 @@ class CreateIndicadorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('indicadors', function (Blueprint $table) {
-            $table->increments('id_indicador');
+        Schema::create('indicadores', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('nombre_indicador');
-            $table->unsignedInteger('id_page');
+            $table->unsignedInteger('page_id');
             $table->integer('estado');
+            $table->foreign('page_id')->references('id')->on('pages');
             $table->timestamps();
-
-            $table->foreign('id_page')->references('id_pagina')->on('pages');
         });
     }
 

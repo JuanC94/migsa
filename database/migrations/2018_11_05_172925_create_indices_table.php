@@ -17,10 +17,9 @@ class CreateIndicesTable extends Migration
             $table->increments('id_indice');
             $table->string('nombre_indice');
             $table->integer('estado');
-            $table->unsignedInteger('id_indicador');
+            $table->unsignedInteger('indicadores_id');
+            $table->foreign('indicadores_id')->references('id')->on('indicadores');
             $table->timestamps();
-
-            $table->foreign('id_indicador')->references('id_indicador')->on('indicadors');
         });
     }
 
