@@ -14,12 +14,12 @@ class CreateIndicesTable extends Migration
     public function up()
     {
         Schema::create('indices', function (Blueprint $table) {
-            $table->increments('id_indice');
-            $table->string('nombre_indice');
-            $table->integer('estado');
-            $table->unsignedInteger('indicadores_id');
-            $table->foreign('indicadores_id')->references('id')->on('indicadores');
+            $table->increments('id');
+            $table->string('nombre');
+            $table->enum('estadio',[1,2,3,4]);
+            $table->unsignedInteger('indicador_id');
             $table->timestamps();
+            $table->foreign('indicador_id')->references('id')->on('indicadores');
         });
     }
 

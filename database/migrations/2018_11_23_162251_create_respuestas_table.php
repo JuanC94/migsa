@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubIndicesTable extends Migration
+class CreateRespuestasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateSubIndicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sub_indices', function (Blueprint $table) {
+        Schema::create('respuestas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_sub_indice');
-            $table->string('descripcion');
-            $table->integer('estado');
+            $table->integer('valor');
             $table->unsignedInteger('indice_id');
-            $table->foreign('indice_id')->references('id')->on('indices');
+            $table->unsignedInteger('user_id');
             $table->timestamps();
+            $table->foreign('indice_id')->references('id')->on('indices');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -31,6 +31,6 @@ class CreateSubIndicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_indices');
+        Schema::dropIfExists('respuestas');
     }
 }

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('sector');
             $table->string('address');
             $table->string('identification');
-            $table->enum('rol', ['Admin', 'Empresa', 'Usuario'])->default('Empresa');
+            $table->enum('rol', ['Admin', 'Empresa'])->default('Empresa');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

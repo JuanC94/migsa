@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndicadorsTable extends Migration
+class CreateIndicadoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,10 @@ class CreateIndicadorsTable extends Migration
     {
         Schema::create('indicadores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_indicador');
-            $table->unsignedInteger('page_id');
-            $table->integer('estado');
-            $table->foreign('page_id')->references('id')->on('pages');
+            $table->string('nombre');
+            $table->unsignedInteger('pagina_id');
             $table->timestamps();
+            $table->foreign('pagina_id')->references('id')->on('paginas');
         });
     }
 
