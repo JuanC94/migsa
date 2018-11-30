@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sector extends Model
 {
-    protected $table = "Sector";
+    protected $table = "sector";
 }
 
 ?>
