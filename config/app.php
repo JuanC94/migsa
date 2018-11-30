@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://migsa'),
+    'url' => env('APP_URL', 'https://damp-brushlands-45902.herokuapp.com/'),
 
     /*
     |--------------------------------------------------------------------------
