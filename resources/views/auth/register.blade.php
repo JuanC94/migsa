@@ -94,11 +94,8 @@
 
                             <div class="col-md-6">
                                 <select id="rol" type="text" class="form-control{{ $errors->has('rol') ? ' is-invalid' : '' }}" name="rol" required>
-<<<<<<< HEAD
+
                                     <option value="Admin">Administrador</option>
-=======
-                                    <option value="Usuario">Usuario</option>
->>>>>>> f431be8af589c3a4e56451a67da72c6b46c96c4c
                                     <option value="Empresa">Empresa</option>
                                 </select>
                                 @if ($errors->has('rol'))
