@@ -27,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->integer('numero_reporte')->default(1);
             $table->rememberToken();
             $table->timestamps();
-
         });
     }
 

@@ -17,11 +17,5 @@ $paginas = \App\Pagina::all();
                 </a>
             </li>
         @endforeach
-        <li class="">
-            <a href="{{ route('reporteempresa', ['user' => Auth::user()->id, 'numero' =>1 ]) }}">
-                <i class="fa  fa-font-awesome"></i>
-                <p>Reportes</p>
-            </a>
-        </li>
     </ul>
 </div>

@@ -37,7 +37,6 @@
                     <p>Indices</p>
                 </a>
             </li>
-
             <li>
                 <a href="{{ route('indexPais') }}">
                     <i class="fa fa-support"></i>

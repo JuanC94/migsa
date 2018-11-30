@@ -43,7 +43,7 @@ class RespuestaController extends Controller
                 $respuesta->indice_id = $valores[0];
                 $respuesta->user_id = Auth::id();
                 $respuesta->estado = 1;
-                $respuesta->numero_reporte = $user->numero_reporte;  
+                $respuesta->numero_reporte = $user->numero_reporte;
                 $respuesta->save();
             }
         }

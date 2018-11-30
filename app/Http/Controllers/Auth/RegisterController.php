@@ -87,12 +87,12 @@ class RegisterController extends Controller
     }
 
     public function showRegistrationForm()
-{
-    $pais = $this->pais;
-    $pais = $pais::all();
-    $sector = $this->sector;
-    $sector = $sector::all();
-    $data = ['paises' => $pais, 'sectores' => $sector ];
-    return view('auth.register', $data);
-}
+    {
+        $pais = $this->pais;
+        $pais = $pais::all();
+        $sector = $this->sector;
+        $sector = $sector::all();
+        $data = ['paises' => $pais, 'sectores' => $sector ];
+        return view('auth.register', $data);
+    }
 }
